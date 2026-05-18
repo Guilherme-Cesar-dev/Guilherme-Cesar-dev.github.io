@@ -1,12 +1,934 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>guilhermecesar.me</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dev Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/11.2.10/framer-motion.umd.min.js"></script>
+<script type="importmap">{"imports":{"ogl":"https://cdn.jsdelivr.net/npm/ogl@1.0.11/src/index.js"}}</script>
+<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>GuilhermeCesar.me</p>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">&#60;Cesar_dev&#62;</div>
+  <ul class="nav-links">
+    <li><a href="#about">sobre</a></li>
+    <li><a href="#projects">projetos</a></li>
+    <li><a href="#services">serviços</a></li>
+    <li><a href="#profile">perfil</a></li>
+    <li><a href="#contact">contato</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <!-- Galaxy background -->
+  <div class="hero-galaxy-bg" id="galaxy-container"></div>
+  <div class="hero-left">
+    <p class="hero-eyebrow">Disponível para projetos</p>
+    <h1 class="hero-title">Guilherme<br/><span>César</span></h1>
+    <div class="hero-typewriter">
+      <span class="prefix">$</span>
+      <span id="typewriter-text"></span>
+      <span class="cursor"></span>
+    </div>
+    <p class="hero-desc">Construo interfaces de alta performance com atenção obsessiva a detalhes. Especialista em React, TypeScript e arquiteturas modernas de front-end.</p>
+    <div class="btn-group">
+      <a href="#projects" class="btn btn-primary">Ver projetos</a>
+      <a href="#contact" class="btn btn-secondary">Entrar em contato</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="magnet-wrap">
+      <div id="magnet-lines"></div>
+      <div style="position:absolute; display:flex; flex-direction:column; gap:0.5rem; align-items:center;">
+        <div class="circular-badge">
+          <svg class="circle-text-ring" viewBox="0 0 120 120">
+            <defs>
+              <path id="circle" d="M60,10 a50,50 0 1,1 -0.001,0"/>
+            </defs>
+            <text>
+              <textPath href="#circle">FULL-STACK · DEVELOPER · UI/UX · OPEN TO WORK ·</textPath>
+            </text>
+          </svg>
+          <div class="circle-center">
+            <img src="https://avatars.githubusercontent.com/u/162651959?v=4" alt="Avatar" style="width:400%; height:400%; border-radius:50%;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker" id="main-ticker">
+    <span>React <span class="dot">✦</span></span>
+    <span>TypeScript <span class="dot">✦</span></span>
+    <span>Node.js <span class="dot">✦</span></span>
+    <span>PostgreSQL <span class="dot">✦</span></span>
+    <span>Prisma <span class="dot">✦</span></span>
+    <span>Supabase <span class="dot">✦</span></span>
+    
+    <span>React <span class="dot">✦</span></span>
+    <span>TypeScript <span class="dot">✦</span></span>
+    <span>Node.js <span class="dot">✦</span></span>
+    <span>PostgreSQL <span class="dot">✦</span></span>
+    <span>Prisma <span class="dot">✦</span></span>
+    <span>Supabase <span class="dot">✦</span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="fade-in">
+  <div>
+    <p class="section-label">// sobre mim</p>
+    <h2 class="section-title">Desenvolvedor<br/>em busca do<br/>código limpo.</h2>
+    <p class="about-text">Sou desenvolvedor full-stack com 2 anos de experiência criando soluções digitais que escalam. Trabalho na interseção entre design e engenharia, sempre buscando a solução mais eficiente.</p>
+    <p class="about-text">Pretendo contribuir com open-source, e desenvolver ferramentas que possam ajudar outros desenvolvedores.</p>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">2+</div>
+        <div class="stat-label">anos de exp.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">5+</div>
+        <div class="stat-label">projetos entregues</div>
+      </div>
+    </div>
+  </div>
+<!--
+  <div>
+    <p class="section-label">// habilidades</p>
+    <div class="skills-list">
+      <div class="skill-row">
+        <span class="skill-name">React</span>
+        <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+        <span class="skill-pct">95%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">TypeScript</span>
+        <div class="skill-bar"><div class="skill-fill" style="width:90%; animation-delay:.1s"></div></div>
+        <span class="skill-pct">90%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Node.js</span>
+        <div class="skill-bar"><div class="skill-fill" style="width:85%; animation-delay:.2s"></div></div>
+        <span class="skill-pct">85%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Next.js</span>
+        <div class="skill-bar"><div class="skill-fill" style="width:88%; animation-delay:.3s"></div></div>
+        <span class="skill-pct">88%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">GraphQL</span>
+        <div class="skill-bar"><div class="skill-fill" style="width:78%; animation-delay:.4s"></div></div>
+        <span class="skill-pct">78%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">AWS</span>
+        <div class="skill-bar"><div class="skill-fill" style="width:72%; animation-delay:.5s"></div></div>
+        <span class="skill-pct">72%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Docker</span>
+        <div class="skill-bar"><div class="skill-fill" style="width:80%; animation-delay:.6s"></div></div>
+        <span class="skill-pct">80%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Figma</span>
+        <div class="skill-bar"><div class="skill-fill" style="width:70%; animation-delay:.7s"></div></div>
+        <span class="skill-pct">70%</span>
+      </div>
+    </div>
+    -->
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="fade-in">
+  <div class="projects-header">
+    <div>
+      <p class="section-label">// projetos</p>
+      <h2 class="section-title">Trabalhos selecionados.</h2>
+    </div>
+    <a href="#" class="btn btn-secondary">Ver todos →</a>
+  </div>
+  <div class="spotlight-projects-grid" id="spotlight-grid">
+    <div class="card-spotlight">
+      <span class="project-number">01</span>
+      <a href="https://github.com/Guilherme-Cesar-dev/Hospital_Almoxarifado" class="project-link">↗</a>
+      <h3 class="project-title">Hosp Almoxarifado</h3>
+      <p class="project-desc">Um exemplo de gestão ao almoxarifado de hospital. </p>
+      <div class="project-tags">
+        <span class="tag">JavaScript</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Supabase</span>
+      </div>
+    </div>
+    <div class="card-spotlight">
+      <span class="project-number">02</span>
+      <a href="http://guilhermecesar.me/MET_OPINIONS/" class="project-link">↗</a>
+      <h3 class="project-title">The Met Opinions</h3>
+      <p class="project-desc">Plataforama para ver artes do museu The MET Museum, podendo salvar suas artes favoritas.</p>
+      <div class="project-tags">
+        <span class="tag">Html/Css</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">API</span>
+      </div>
+    </div>
+    <div class="card-spotlight">
+      <span class="project-number">03</span>
+      <a href="http://guilhermecesar.me/Pokedez-do-Gui/frontend/pages/inicio.html" class="project-link">↗</a>
+      <h3 class="project-title">Pokedex.gui</h3>
+      <p class="project-desc">Interface gráfica para visualização e busca de pokémons da Primeira Geração.</p>
+      <div class="project-tags">
+        <span class="tag">Html/Css</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">API</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PIXEL SERVICES -->
+<section id="services" class="fade-in">
+  <p class="section-label">// serviços</p>
+  <h2 class="section-title">O que eu faço.</h2>
+  <p style="color:var(--muted); font-size:.85rem; margin-top:.5rem;">Passe o mouse para descobrir →</p>
+  <div class="pixel-grid" id="services-grid">
+    <div class="pixelated-image-card" style="height:220px;" tabindex="0">
+      <div style="padding-top:0;"></div>
+      <div class="pixelated-image-card__default">
+        <div class="service-first">
+          <div class="service-icon">⚛️</div>
+          <div class="service-name" style="color:var(--text)">Front-end</div>
+          <div style="font-size:.75rem;color:var(--muted);font-family:var(--font-mono)">React · Css · Vite</div>
+        </div>
+      </div>
+      <div class="pixelated-image-card__active">
+        <div class="service-reveal" style="background:linear-gradient(135deg,#0a0a0f,#111520)">
+          <div class="service-icon">⚛️</div>
+          <div class="service-name" style="color:#0044a9">Front-end</div>
+          <p>Interfaces responsivas de alta performance com foco em acessibilidade e DX.</p>
+        </div>
+      </div>
+      <div class="pixelated-image-card__pixels"></div>
+    </div>
+    <div class="pixelated-image-card" style="height:220px;" tabindex="0">
+      <div class="pixelated-image-card__default">
+        <div class="service-first">
+          <div class="service-icon">🛠️</div>
+          <div class="service-name" style="color:var(--text)">Back-end</div>
+          <div style="font-size:.75rem;color:var(--muted);font-family:var(--font-mono)">Node · JavaScript · Sql</div>
+        </div>
+      </div>
+      <div class="pixelated-image-card__active">
+        <div class="service-reveal" style="background:linear-gradient(135deg,#0a0a0f,#18100a)">
+          <div class="service-icon">🛠️</div>
+          <div class="service-name" style="color:var(--accent2)">Back-end</div>
+          <p>APIs REST e PostgreSQL escaláveis, microsserviços e integrações de terceiros.</p>
+        </div>
+      </div>
+      <div class="pixelated-image-card__pixels"></div>
+    </div>
+    <div class="pixelated-image-card" style="height:220px;" tabindex="0">
+      <div class="pixelated-image-card__default">
+        <div class="service-first">
+          <div class="service-icon">🎨</div>
+          <div class="service-name" style="color:var(--text)">UI/UX Design</div>
+          <div style="font-size:.75rem;color:var(--muted);font-family:var(--font-mono)">Figma · Design Sys.</div>
+        </div>
+      </div>
+      <div class="pixelated-image-card__active">
+        <div class="service-reveal" style="background:linear-gradient(135deg,#0a0a0f,#120a18)">
+          <div class="service-icon">🎨</div>
+          <div class="service-name" style="color:var(--accent3)">UI/UX Design</div>
+          <p>Design systems coesos, protótipos interativos e experiências intuitivas.</p>
+        </div>
+      </div>
+      <div class="pixelated-image-card__pixels"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SHAPEGRID DIVIDER after services -->
+<div class="shapegrid-divider">
+  <canvas id="shapegrid-canvas-2" style="position:absolute;inset:0;"></canvas>
+  <div class="shapegrid-divider-overlay"></div>
+  <div class="shapegrid-divider-label">✦ &nbsp; ferramentas & stack &nbsp; ✦</div>
+</div>
+
+<!-- LOGO TECH TICKER -->
+<div class="logo-ticker">
+  <div class="logo-ticker-inner" id="logo-ticker">
+    <span class="logo-ticker-item">Vercel</span>
+    <span class="logo-ticker-item">·</span>
+    <span class="logo-ticker-item">Supabase</span>
+    <span class="logo-ticker-item">·</span>
+    <span class="logo-ticker-item">Notion</span>
+    <span class="logo-ticker-item">·</span>
+    <span class="logo-ticker-item">Vscode</span>
+    <span class="logo-ticker-item">·</span>
+    <span class="logo-ticker-item">Figma</span>
+    <span class="logo-ticker-item">·</span>
+    <span class="logo-ticker-item">GitHub</span>
+    <span class="logo-ticker-item">·</span>
+    <span class="logo-ticker-item">Git</span>
+    <span class="logo-ticker-item">·</span>
+    <span class="logo-ticker-item">Vercel</span>
+    <span class="logo-ticker-item">·</span>
+    <span class="logo-ticker-item">Supabase</span>
+    <span class="logo-ticker-item">·</span>
+    <span class="logo-ticker-item">Notion</span>
+    <span class="logo-ticker-item">·</span>
+    <span class="logo-ticker-item">Vscode</span>
+    <span class="logo-ticker-item">·</span>
+    <span class="logo-ticker-item">Figma</span>
+    <span class="logo-ticker-item">·</span>
+    <span class="logo-ticker-item">GitHub</span>
+    <span class="logo-ticker-item">·</span>
+    <span class="logo-ticker-item">Git</span>
+    <span class="logo-ticker-item">·</span>
+  </div>
+</div>
+
+<!-- PROFILE CARD SECTION -->
+<section id="profile" class="fade-in" style="padding:5rem 3rem; max-width:1200px; margin:0 auto;">
+  <p class="section-label">// quem sou? </p>
+  <div class="profile-layout">
+
+    <!-- ProfileCard -->
+    <div class="profile-card-col">
+      <div class="pc-card-wrapper" id="pc-wrapper" style="--icon:none; --grain:none; --inner-gradient:linear-gradient(145deg,#0d2e1a 0%,#7effd415 100%); --behind-glow-color:rgba(126,255,212,0.45); --behind-glow-size:50%;">
+        <div class="pc-behind"></div>
+        <div class="pc-card-shell" id="pc-shell">
+          <section class="pc-card">
+            <div class="pc-inside">
+              <div class="pc-shine"></div>
+              <div class="pc-glare"></div>
+              <div class="pc-content pc-avatar-content">
+                <!-- Avatar: initials placeholder -->
+                <div style="position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:100%; display:flex; justify-content:center; align-items:flex-end; pointer-events:none;">
+                  <div style="width:200px; height:280px; background:linear-gradient(to top, rgba(126,255,212,0.15), transparent); border-radius:50% 50% 0 0; display:flex; align-items:center; justify-content:center;">
+                    <div style="font-family:var(--font-head); font-size:5rem; font-weight:800; color:rgba(126,255,212,0.25); line-height:1;">GC</div>
+                  </div>
+                </div>
+                <!-- Avatar photo -->
+                <img
+                  class="avatar"
+                  src="https://avatars.githubusercontent.com/u/162651959?v=4"
+                  alt="Guilherme César avatar"
+                  style="width:85%; position:absolute; left:50%; bottom:-1px; transform:translateX(-50%); border-radius:50% 50% 0 0; object-fit:cover; object-position:top; pointer-events:none;"
+                />
+                <div class="pc-user-info">
+                  <div class="pc-user-details">
+                    <div class="pc-mini-avatar">GC</div>
+                    <div class="pc-user-text">
+                      <div class="pc-handle">@guilherme-cesar-dev</div>
+                      <div class="pc-status">● Disponível</div>
+                    </div>
+                  </div>
+                  <button class="pc-contact-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contato</button>
+                </div>
+              </div>
+              <div class="pc-content">
+                <div class="pc-details">
+                  <h3>Guilherme César</h3>
+                  <p>Full-Stack Developer</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info side -->
+    <div class="profile-info-col">
+      <p class="section-label">// experiência & valores</p>
+      <h2 class="section-title" style="margin-bottom:1.5rem;">Não apenas escrevo<br/>código —<br/><em style="font-style:normal; color:var(--accent)">resolvo problemas.</em></h2>
+      <p class="about-text">Acredito que o melhor software nasce da colaboração entre humanos e tecnologia, onde a empatia pelo usuário final é tão importante quanto a eficiência do algoritmo.</p>
+
+      <div class="profile-meta" style="margin-top:2.5rem;">
+        <div class="profile-meta-item">
+          <div class="profile-meta-icon">🎯</div>
+          <div class="profile-meta-text">
+            <strong>Mentalidade orientada a produto</strong>
+            <span>Entrego features que geram valor de negócio, não apenas código funcional.</span>
+          </div>
+        </div>
+        <div class="profile-meta-item">
+          <div class="profile-meta-icon">🔬</div>
+          <div class="profile-meta-text">
+            <strong>Aprendizado contínuo</strong>
+            <span>Estudo arquitetura, sistemas e novas tecnologias — sem exceção.</span>
+          </div>
+        </div>
+        <div class="profile-meta-item">
+          <div class="profile-meta-icon">🤝</div>
+          <div class="profile-meta-text">
+            <strong>Colaboração radical</strong>
+            <span>Trabalho bem em equipe, dou e recebo feedback com abertura e respeito.</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="#contact" class="btn btn-primary">Trabalhar comigo</a>
+        <a href="#" class="btn btn-secondary" download>Baixar CV ↓</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SHAPEGRID DIVIDER before contact -->
+<div class="shapegrid-divider">
+  <canvas id="shapegrid-canvas" style="position:absolute;inset:0;"></canvas>
+  <div class="shapegrid-divider-overlay"></div>
+  <div class="shapegrid-divider-label">✦ &nbsp; entre em contato &nbsp; ✦</div>
+</div>
+
+<section id="contact" class="fade-in">
+  <div class="contact-inner">
+    <p class="section-label">// contato</p>
+    <h2 class="section-title">Vamos construir<br/>algo juntos?</h2>
+    <p class="contact-desc">Estou disponível para projetos freelance, consultoria e posições full-time. Mande uma mensagem e respondo em até 24h.</p>
+    
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span style="font-family:var(--font-head); font-weight:800; color:var(--accent)">&#60;GC/&#62;</span>
+  <span>Direito Reservados· 2026</span>
+  <div style="display:flex;gap:1.5rem;">
+    <a href="https://github.com/Guilherme-Cesar-dev" style="color:var(--muted); text-decoration:none; transition:color .2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">GitHub</a>
+    <a href="https://www.linkedin.com/in/cesar-gui/" style="color:var(--muted); text-decoration:none; transition:color .2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">LinkedIn</a>
+  </div>
+</footer>
+
+<script>
+// ── TYPEWRITER ──
+(function(){
+  const el = document.getElementById('typewriter-text');
+  const phrases = [
+    'Full-Stack Developer',
+    'Tech Enthusiast',
+    'UI/UX Enthusiast',
+    'Open Source Contributor',
+    'Problem Solver'
+  ];
+  let pi = 0, ci = 0, deleting = false;
+  function type(){
+    const cur = phrases[pi];
+    if(!deleting){
+      el.textContent = cur.slice(0, ci+1);
+      ci++;
+      if(ci >= cur.length){ deleting = true; setTimeout(type, 1800); return; }
+    } else {
+      el.textContent = cur.slice(0, ci-1);
+      ci--;
+      if(ci <= 0){ deleting = false; pi = (pi+1)%phrases.length; }
+    }
+    setTimeout(type, deleting ? 40 : 80);
+  }
+  type();
+})();
+
+// ── TICKER ANIMATION ──
+(function(){
+  const ticker = document.getElementById('main-ticker');
+  let x = 0;
+  function loop(){
+    x -= 0.6;
+    const w = ticker.scrollWidth / 2;
+    if(Math.abs(x) >= w) x = 0;
+    ticker.style.transform = `translateX(${x}px)`;
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+
+// ── MAGNET LINES ──
+(function(){
+  const container = document.getElementById('magnet-lines');
+  if(!container) return;
+  const rows = 8, cols = 8;
+  container.style.display = 'grid';
+  container.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+  container.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+  container.style.width = '280px';
+  container.style.height = '280px';
+  container.style.justifyItems = 'center';
+  container.style.alignItems = 'center';
+  container.classList.add('magnetLines-container');
+
+  for(let i = 0; i < rows*cols; i++){
+    const s = document.createElement('span');
+    s.style.setProperty('--rotate', '-10deg');
+    s.style.backgroundColor = 'rgba(126,255,212,0.25)';
+    s.style.width = '2px';
+    s.style.height = '22px';
+    s.style.borderRadius = '2px';
+    container.appendChild(s);
+  }
+
+  const items = container.querySelectorAll('span');
+  window.addEventListener('pointermove', e => {
+    items.forEach(item => {
+      const r = item.getBoundingClientRect();
+      const cx = r.x + r.width/2, cy = r.y + r.height/2;
+      const b = e.x - cx, a = e.y - cy;
+      const c = Math.sqrt(a*a + b*b) || 1;
+      const angle = ((Math.acos(b/c)*180)/Math.PI) * (e.y > cy ? 1 : -1);
+      item.style.setProperty('--rotate', `${angle}deg`);
+    });
+  });
+
+  // init
+  if(items.length){
+    const mid = items[Math.floor(items.length/2)];
+    const r = mid.getBoundingClientRect();
+    items.forEach(item => {
+      const ir = item.getBoundingClientRect();
+      const cx = ir.x + ir.width/2, cy = ir.y + ir.height/2;
+      const b = r.x - cx, a = r.y - cy;
+      const c = Math.sqrt(a*a + b*b)||1;
+      const angle = ((Math.acos(b/c)*180)/Math.PI)*(r.y > cy ? 1 : -1);
+      item.style.setProperty('--rotate', `${angle}deg`);
+    });
+  }
+})();
+
+// ── PIXEL TRANSITION ──
+(function(){
+  const cards = document.querySelectorAll('.pixelated-image-card');
+  const gridSize = 20;
+  const duration = 0.18;
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+  cards.forEach(card => {
+    const pixelGrid = card.querySelector('.pixelated-image-card__pixels');
+    const active = card.querySelector('.pixelated-image-card__active');
+    pixelGrid.innerHTML = '';
+
+    for(let r=0; r<gridSize; r++){
+      for(let c=0; c<gridSize; c++){
+        const px = document.createElement('div');
+        px.classList.add('pixelated-image-card__pixel');
+        px.style.backgroundColor = 'var(--bg)';
+        const size = 100/gridSize;
+        px.style.width = `${size}%`;
+        px.style.height = `${size}%`;
+        px.style.left = `${c*size}%`;
+        px.style.top = `${r*size}%`;
+        pixelGrid.appendChild(px);
+      }
+    }
+
+    let isActive = false;
+    let delayedCall = null;
+
+    const animatePixels = (activate) => {
+      isActive = activate;
+      const pixels = pixelGrid.querySelectorAll('.pixelated-image-card__pixel');
+      if(!pixels.length) return;
+
+      gsap.killTweensOf(pixels);
+      if(delayedCall) delayedCall.kill();
+      gsap.set(pixels, {display:'none'});
+
+      const total = pixels.length;
+      const stagger = duration/total;
+      gsap.to(pixels, {display:'block', duration:0, stagger:{each:stagger, from:'random'}});
+      delayedCall = gsap.delayedCall(duration, () => {
+        active.style.display = activate ? 'block' : 'none';
+      });
+      gsap.to(pixels, {display:'none', duration:0, delay:duration, stagger:{each:stagger, from:'random'}});
+    };
+
+    if(!isTouchDevice){
+      card.addEventListener('mouseenter', () => { if(!isActive) animatePixels(true); });
+      card.addEventListener('mouseleave', () => { if(isActive) animatePixels(false); });
+    } else {
+      card.addEventListener('click', () => { if(!isActive) animatePixels(true); else animatePixels(false); });
+    }
+  });
+})();
+
+// ── SPOTLIGHT CARDS ──
+(function(){
+  const cards = document.querySelectorAll('.card-spotlight');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
+})();
+
+// ── PROFILE CARD TILT ENGINE ──
+(function(){
+  const wrap = document.getElementById('pc-wrapper');
+  const shell = document.getElementById('pc-shell');
+  if(!wrap || !shell) return;
+
+  const clamp = (v, mn=0, mx=100) => Math.min(Math.max(v, mn), mx);
+  const round = (v, p=3) => parseFloat(v.toFixed(p));
+  const adjust = (v, fMin, fMax, tMin, tMax) => round(tMin + ((tMax-tMin)*(v-fMin))/(fMax-fMin));
+
+  let rafId=null, running=false, lastTs=0;
+  let curX=0, curY=0, tgtX=0, tgtY=0;
+  const DEFAULT_TAU=0.14, INITIAL_TAU=0.6;
+  let initialUntil=0;
+
+  function setVars(x,y){
+    const w = shell.clientWidth||1, h = shell.clientHeight||1;
+    const px = clamp((100/w)*x), py = clamp((100/h)*y);
+    const cx = px-50, cy = py-50;
+    const props = {
+      '--pointer-x':`${px}%`, '--pointer-y':`${py}%`,
+      '--background-x':`${adjust(px,0,100,35,65)}%`, '--background-y':`${adjust(py,0,100,35,65)}%`,
+      '--pointer-from-center':`${clamp(Math.hypot(py-50,px-50)/50,0,1)}`,
+      '--pointer-from-top':`${py/100}`, '--pointer-from-left':`${px/100}`,
+      '--rotate-x':`${round(-(cx/5))}deg`, '--rotate-y':`${round(cy/4)}deg`
+    };
+    for(const [k,v] of Object.entries(props)) wrap.style.setProperty(k,v);
+  }
+
+  function step(ts){
+    if(!running) return;
+    if(lastTs===0) lastTs=ts;
+    const dt=(ts-lastTs)/1000; lastTs=ts;
+    const tau = ts<initialUntil ? INITIAL_TAU : DEFAULT_TAU;
+    const k = 1-Math.exp(-dt/tau);
+    curX += (tgtX-curX)*k; curY += (tgtY-curY)*k;
+    setVars(curX,curY);
+    if(Math.abs(tgtX-curX)>0.05||Math.abs(tgtY-curY)>0.05||document.hasFocus()){
+      rafId=requestAnimationFrame(step);
+    } else { running=false; lastTs=0; if(rafId){cancelAnimationFrame(rafId);rafId=null;} }
+  }
+
+  function start(){ if(running) return; running=true; lastTs=0; rafId=requestAnimationFrame(step); }
+  function setTarget(x,y){ tgtX=x; tgtY=y; start(); }
+  function toCenter(){ setTarget(shell.clientWidth/2, shell.clientHeight/2); }
+
+  shell.addEventListener('pointerenter', e=>{
+    shell.classList.add('active','entering');
+    setTimeout(()=>shell.classList.remove('entering'),180);
+    const r=shell.getBoundingClientRect();
+    setTarget(e.clientX-r.left, e.clientY-r.top);
+  });
+  shell.addEventListener('pointermove', e=>{
+    const r=shell.getBoundingClientRect();
+    setTarget(e.clientX-r.left, e.clientY-r.top);
+  });
+  shell.addEventListener('pointerleave', ()=>{ toCenter(); shell.classList.remove('active'); });
+
+  // initial animation
+  curX=(shell.clientWidth||240)-70; curY=60; setVars(curX,curY);
+  initialUntil=performance.now()+1200;
+  toCenter(); start();
+})();
+
+
+(function(){
+  const els = document.querySelectorAll('.fade-in');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, {threshold: 0.1});
+  els.forEach(el => obs.observe(el));
+})();
+</script>
+
+<!-- Galaxy + LetterGlitch + ShapeGrid (ESM, loads after page) -->
+<script type="module">
+// ══════════════════════════════════════════
+// GALAXY (OGL WebGL shader)
+// ══════════════════════════════════════════
+import { Renderer, Program, Mesh, Color, Triangle } from 'https://cdn.jsdelivr.net/npm/ogl@1.0.11/src/index.js';
+
+const vertexShader = `
+attribute vec2 uv;
+attribute vec2 position;
+varying vec2 vUv;
+void main() {
+  vUv = uv;
+  gl_Position = vec4(position, 0, 1);
+}`;
+
+const fragmentShader = `
+precision highp float;
+uniform float uTime;
+uniform vec3 uResolution;
+uniform vec2 uFocal;
+uniform vec2 uRotation;
+uniform float uStarSpeed;
+uniform float uDensity;
+uniform float uHueShift;
+uniform float uSpeed;
+uniform vec2 uMouse;
+uniform float uGlowIntensity;
+uniform float uSaturation;
+uniform bool uMouseRepulsion;
+uniform float uTwinkleIntensity;
+uniform float uRotationSpeed;
+uniform float uRepulsionStrength;
+uniform float uMouseActiveFactor;
+uniform float uAutoCenterRepulsion;
+uniform bool uTransparent;
+varying vec2 vUv;
+#define NUM_LAYER 4.0
+#define STAR_COLOR_CUTOFF 0.2
+#define MAT45 mat2(0.7071,-0.7071,0.7071,0.7071)
+#define PERIOD 3.0
+float Hash21(vec2 p){p=fract(p*vec2(123.34,456.21));p+=dot(p,p+45.32);return fract(p.x*p.y);}
+float tri(float x){return abs(fract(x)*2.0-1.0);}
+float tris(float x){float t=fract(x);return 1.0-smoothstep(0.0,1.0,abs(2.0*t-1.0));}
+float trisn(float x){float t=fract(x);return 2.0*(1.0-smoothstep(0.0,1.0,abs(2.0*t-1.0)))-1.0;}
+vec3 hsv2rgb(vec3 c){vec4 K=vec4(1.0,2.0/3.0,1.0/3.0,3.0);vec3 p=abs(fract(c.xxx+K.xyz)*6.0-K.www);return c.z*mix(K.xxx,clamp(p-K.xxx,0.0,1.0),c.y);}
+float Star(vec2 uv,float flare){float d=length(uv);float m=(0.05*uGlowIntensity)/d;float rays=smoothstep(0.0,1.0,1.0-abs(uv.x*uv.y*1000.0));m+=rays*flare*uGlowIntensity;uv*=MAT45;rays=smoothstep(0.0,1.0,1.0-abs(uv.x*uv.y*1000.0));m+=rays*0.3*flare*uGlowIntensity;m*=smoothstep(1.0,0.2,d);return m;}
+vec3 StarLayer(vec2 uv){vec3 col=vec3(0.0);vec2 gv=fract(uv)-0.5;vec2 id=floor(uv);for(int y=-1;y<=1;y++){for(int x=-1;x<=1;x++){vec2 offset=vec2(float(x),float(y));vec2 si=id+vec2(float(x),float(y));float seed=Hash21(si);float size=fract(seed*345.32);float glossLocal=tri(uStarSpeed/(PERIOD*seed+1.0));float flareSize=smoothstep(0.9,1.0,size)*glossLocal;float red=smoothstep(STAR_COLOR_CUTOFF,1.0,Hash21(si+1.0))+STAR_COLOR_CUTOFF;float blu=smoothstep(STAR_COLOR_CUTOFF,1.0,Hash21(si+3.0))+STAR_COLOR_CUTOFF;float grn=min(red,blu)*seed;vec3 base=vec3(red,grn,blu);float hue=atan(base.g-base.r,base.b-base.r)/(2.0*3.14159)+0.5;hue=fract(hue+uHueShift/360.0);float sat=length(base-vec3(dot(base,vec3(0.299,0.587,0.114))))*uSaturation;float val=max(max(base.r,base.g),base.b);base=hsv2rgb(vec3(hue,sat,val));vec2 pad=vec2(tris(seed*34.0+uTime*uSpeed/10.0),tris(seed*38.0+uTime*uSpeed/30.0))-0.5;float star=Star(gv-offset-pad,flareSize);vec3 color=base;float twinkle=trisn(uTime*uSpeed+seed*6.2831)*0.5+1.0;twinkle=mix(1.0,twinkle,uTwinkleIntensity);star*=twinkle;col+=star*size*color;}}return col;}
+void main(){
+  vec2 focalPx=uFocal*uResolution.xy;
+  vec2 uv=(vUv*uResolution.xy-focalPx)/uResolution.y;
+  if(uMouseRepulsion){vec2 mousePosUV=(uMouse*uResolution.xy-focalPx)/uResolution.y;float mouseDist=length(uv-mousePosUV);vec2 repulsion=normalize(uv-mousePosUV)*(uRepulsionStrength/(mouseDist+0.1));uv+=repulsion*0.05*uMouseActiveFactor;}
+  float autoRotAngle=uTime*uRotationSpeed;mat2 autoRot=mat2(cos(autoRotAngle),-sin(autoRotAngle),sin(autoRotAngle),cos(autoRotAngle));uv=autoRot*uv;
+  uv=mat2(uRotation.x,-uRotation.y,uRotation.y,uRotation.x)*uv;
+  vec3 col=vec3(0.0);
+  for(float i=0.0;i<1.0;i+=1.0/NUM_LAYER){float depth=fract(i+uStarSpeed*uSpeed);float scale=mix(20.0*uDensity,0.5*uDensity,depth);float fade=depth*smoothstep(1.0,0.9,depth);col+=StarLayer(uv*scale+i*453.32)*fade;}
+  float alpha=length(col);alpha=smoothstep(0.0,0.3,alpha);alpha=min(alpha,1.0);
+  gl_FragColor=vec4(col,alpha);
+}`;
+
+(function initGalaxy(){
+  const ctn = document.getElementById('galaxy-container');
+  if(!ctn) return;
+
+  const renderer = new Renderer({ alpha: true, premultipliedAlpha: false });
+  const gl = renderer.gl;
+  gl.enable(gl.BLEND);
+  gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+  gl.clearColor(0,0,0,0);
+
+  let program;
+  function resize(){
+    renderer.setSize(ctn.offsetWidth, ctn.offsetHeight);
+    if(program) program.uniforms.uResolution.value = new Color(gl.canvas.width, gl.canvas.height, gl.canvas.width/gl.canvas.height);
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  const geometry = new Triangle(gl);
+  const mouse = new Float32Array([0.5, 0.5]);
+  const smoothMouse = { x:0.5, y:0.5 };
+  let targetMouse = { x:0.5, y:0.5 };
+  let mouseActive = 0, targetActive = 0;
+
+  program = new Program(gl, {
+    vertex: vertexShader, fragment: fragmentShader,
+    uniforms: {
+      uTime:{value:0},
+      uResolution:{value:new Color(gl.canvas.width, gl.canvas.height, gl.canvas.width/gl.canvas.height)},
+      uFocal:{value:new Float32Array([0.5,0.5])},
+      uRotation:{value:new Float32Array([1.0,0.0])},
+      uStarSpeed:{value:0.5}, uDensity:{value:1.2}, uHueShift:{value:160},
+      uSpeed:{value:1.0}, uMouse:{value:mouse},
+      uGlowIntensity:{value:0.4}, uSaturation:{value:0.6},
+      uMouseRepulsion:{value:false}, uTwinkleIntensity:{value:0.4},
+      uRotationSpeed:{value:0.06}, uRepulsionStrength:{value:0},
+      uMouseActiveFactor:{value:0.0}, uAutoCenterRepulsion:{value:0},
+      uTransparent:{value:true}
+    }
+  });
+
+  const mesh = new Mesh(gl, {geometry, program});
+  let animId;
+  function update(t){
+    animId = requestAnimationFrame(update);
+    program.uniforms.uTime.value = t*0.001;
+    program.uniforms.uStarSpeed.value = (t*0.001*0.5)/10.0;
+    renderer.render({scene: mesh});
+  }
+  animId = requestAnimationFrame(update);
+  ctn.appendChild(gl.canvas);
+  gl.canvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;pointer-events:none;';
+})();
+
+// ══════════════════════════════════════════
+// LETTER GLITCH (canvas 2D)
+// ══════════════════════════════════════════
+(function initLetterGlitch(){
+  const ctn = document.getElementById('glitch-container');
+  if(!ctn) return;
+
+  const canvas = document.createElement('canvas');
+  ctn.appendChild(canvas);
+  canvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;';
+  const ctx = canvas.getContext('2d');
+
+  const COLORS = ['#0d2e1a', '#3a8c60', '#7effd4'];
+  const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$&*()-_+=/[]{};:<>.,0123456789';
+  const charArr = Array.from(CHARS);
+  const fontSize = 16, charW = 10, charH = 20;
+
+  let letters=[], grid={cols:0,rows:0}, lastGlitch=Date.now(), animId;
+
+  function randChar(){ return charArr[Math.floor(Math.random()*charArr.length)]; }
+  function randColor(){ return COLORS[Math.floor(Math.random()*COLORS.length)]; }
+
+  function hexToRgb(hex){
+    hex = hex.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i,(_,r,g,b)=>r+r+g+g+b+b);
+    const r=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return r?{r:parseInt(r[1],16),g:parseInt(r[2],16),b:parseInt(r[3],16)}:null;
+  }
+  function lerp(a,b,t){ return {r:Math.round(a.r+(b.r-a.r)*t),g:Math.round(a.g+(b.g-a.g)*t),b:Math.round(a.b+(b.b-a.b)*t)}; }
+
+  function resize(){
+    const pr = ctn.parentElement||ctn;
+    const dpr = window.devicePixelRatio||1;
+    const w = pr.offsetWidth, h = pr.offsetHeight;
+    canvas.width = w*dpr; canvas.height = h*dpr;
+    canvas.style.width = w+'px'; canvas.style.height = h+'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    grid.cols = Math.ceil(w/charW); grid.rows = Math.ceil(h/charH);
+    letters = Array.from({length:grid.cols*grid.rows}, ()=>({char:randChar(),color:randColor(),targetColor:randColor(),progress:1}));
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.font = `${fontSize}px monospace`; ctx.textBaseline = 'top';
+    letters.forEach((l,i)=>{
+      const x=(i%grid.cols)*charW, y=Math.floor(i/grid.cols)*charH;
+      ctx.fillStyle = l.color;
+      ctx.fillText(l.char,x,y);
+    });
+  }
+
+  function update(){
+    const now = Date.now();
+    if(now - lastGlitch >= 55){
+      const count = Math.max(1, Math.floor(letters.length*0.04));
+      for(let i=0;i<count;i++){
+        const idx = Math.floor(Math.random()*letters.length);
+        letters[idx].char = randChar();
+        letters[idx].targetColor = randColor();
+        letters[idx].progress = 0;
+      }
+      lastGlitch = now;
+    }
+    letters.forEach(l=>{
+      if(l.progress<1){
+        l.progress = Math.min(1, l.progress+0.06);
+        const s=hexToRgb(l.color), e=hexToRgb(l.targetColor);
+        if(s&&e){ const c=lerp(s,e,l.progress); l.color=`rgb(${c.r},${c.g},${c.b})`; }
+      }
+    });
+    draw();
+    animId = requestAnimationFrame(update);
+  }
+
+  resize();
+  window.addEventListener('resize', ()=>{ cancelAnimationFrame(animId); resize(); update(); });
+  update();
+})();
+
+// ══════════════════════════════════════════
+// SHAPEGRID (canvas 2D, diagonal hexagons)
+// ══════════════════════════════════════════
+function initShapeGrid(canvasId, opts={}){
+  const canvas = document.getElementById(canvasId);
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const sq = opts.squareSize||36;
+  const speed = opts.speed||0.4;
+  const borderColor = opts.borderColor||'rgba(126,255,212,0.12)';
+  const hoverFill = opts.hoverFill||'rgba(126,255,212,0.08)';
+  const shape = opts.shape||'hexagon';
+  const hexH = sq * Math.sqrt(3);
+  const hexW = sq * 1.5;
+  let offset = {x:0,y:0};
+  let hovered = null;
+  let cellOp = new Map();
+  let rafId;
+
+  function resize(){
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+  window.addEventListener('resize', resize); resize();
+
+  function drawHex(cx,cy,r){
+    ctx.beginPath();
+    for(let i=0;i<6;i++){
+      const a=(Math.PI/3)*i;
+      const vx=cx+r*Math.cos(a), vy=cy+r*Math.sin(a);
+      i===0?ctx.moveTo(vx,vy):ctx.lineTo(vx,vy);
+    }
+    ctx.closePath();
+  }
+
+  function drawCircle(cx,cy,r){
+    ctx.beginPath(); ctx.arc(cx,cy,r/2,0,Math.PI*2); ctx.closePath();
+  }
+
+  function drawGrid(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    if(shape==='hexagon'){
+      const ox=((offset.x%hexW)+hexW)%hexW, oy=((offset.y%hexH)+hexH)%hexH;
+      const cols=Math.ceil(canvas.width/hexW)+3, rows=Math.ceil(canvas.height/hexH)+3;
+      for(let c=-2;c<cols;c++){
+        for(let r=-2;r<rows;r++){
+          const cx=c*hexW+ox, cy=r*hexH+(c%2!==0?hexH/2:0)+oy;
+          const key=`${c},${r}`;
+          const alpha=cellOp.get(key);
+          if(alpha){ ctx.globalAlpha=alpha; drawHex(cx,cy,sq); ctx.fillStyle=hoverFill; ctx.fill(); ctx.globalAlpha=1; }
+          drawHex(cx,cy,sq); ctx.strokeStyle=borderColor; ctx.stroke();
+        }
+      }
+    } else {
+      const ox=((offset.x%sq)+sq)%sq, oy=((offset.y%sq)+sq)%sq;
+      const cols=Math.ceil(canvas.width/sq)+3, rows=Math.ceil(canvas.height/sq)+3;
+      for(let c=-2;c<cols;c++){
+        for(let r=-2;r<rows;r++){
+          const cx=c*sq+sq/2+ox, cy=r*sq+sq/2+oy;
+          const key=`${c},${r}`;
+          const alpha=cellOp.get(key);
+          if(alpha){ ctx.globalAlpha=alpha; drawCircle(cx,cy,sq); ctx.fillStyle=hoverFill; ctx.fill(); ctx.globalAlpha=1; }
+          drawCircle(cx,cy,sq); ctx.strokeStyle=borderColor; ctx.stroke();
+        }
+      }
+    }
+  }
+
+  function updateOpacities(){
+    for(const [k] of cellOp) cellOp.delete(k);
+  }
+
+  function tick(){
+    offset.x=(offset.x-speed+hexW*10)%(shape==='hexagon'?hexW*2:sq);
+    offset.y=(offset.y-speed+hexH*10)%(shape==='hexagon'?hexH:sq);
+    drawGrid();
+    rafId=requestAnimationFrame(tick);
+  }
+
+  tick();
+}
+
+initShapeGrid('shapegrid-canvas', {squareSize:28, speed:0.35, shape:'hexagon', borderColor:'rgba(126,255,212,0.1)'});
+initShapeGrid('shapegrid-canvas-2', {squareSize:32, speed:0.5, shape:'circle', borderColor:'rgba(192,132,252,0.1)', hoverFill:'rgba(192,132,252,0.08)'});
+
+</script>
 </body>
 </html>
